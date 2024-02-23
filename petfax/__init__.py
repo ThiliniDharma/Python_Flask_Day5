@@ -1,12 +1,12 @@
 
-from flask import Flask 
+# from flask import Flask 
 
-def create_app(): 
-    app = Flask(__name__)
+# def create_app(): 
+#     app = Flask(__name__)
 
-    @app.route('/')
-    def hello(): 
-        return 'Hello, PetFax!'
+#     @app.route('/')
+#     def hello(): 
+#         return 'Hello, PetFax!'
 
 # # pets index route
 #     @app.route('/pets')
@@ -15,7 +15,16 @@ def create_app():
 # factory
 
 
-    # register pet blueprint 
+from flask import Flask
+
+def create_app():
+    app = Flask(__name__)
+
+    @app.route('/')
+    def hello():
+        return 'Hello!'
+    
+    #register blueprint
     from . import pet
     app.register_blueprint(pet.bp)
 
